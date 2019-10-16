@@ -1,0 +1,3 @@
+[submodule "Assets/Standard-Assets"]
+	path = Assets/Standard-Assets
+	url = git@github.com:FredericRP/Standard-Assets.git
