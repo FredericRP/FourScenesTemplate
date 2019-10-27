@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/FredericRP/Template/Scenes/1.staticLoading.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/FredericRP/Template/Scenes/2.asyncLoading.unity
+    guid: 213f570af5297d04b8f30b7cd82765c4
+  - enabled: 1
+    path: Assets/FredericRP/Template/Scenes/3.gameDataLoading.unity
+    guid: eebfd5f2fa2c60f4a8a6616adba92d40
+  - enabled: 1
+    path: Assets/FredericRP/Template/Scenes/4.menu.unity
+    guid: 1d64b1a0222954c4cbbd9cb21c64e912
   m_configObjects: {}
