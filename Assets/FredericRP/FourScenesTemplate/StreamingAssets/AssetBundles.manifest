@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3388336438
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: fredericrp/tips
+      Dependencies: {}

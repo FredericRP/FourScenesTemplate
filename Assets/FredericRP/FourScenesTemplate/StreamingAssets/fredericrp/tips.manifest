@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1258721315
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a56f8b9d2e30c50f824ada3eee6a3f63
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Standard-Assets/Plugins/Tips/TipFiles/FR-fr/tips.txt
+Dependencies: []
