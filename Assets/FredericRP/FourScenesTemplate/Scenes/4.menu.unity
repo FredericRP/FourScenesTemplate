@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -859,10 +858,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "SUPER CITY\n\tCODER ALPHA 2!!"
+  m_text: Drone Hook
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 509d46e812d8a6a41b63ce2f3768d4fc, type: 2}
+  m_sharedMaterial: {fileID: 7186866704173153590, guid: 509d46e812d8a6a41b63ce2f3768d4fc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -871,12 +871,12 @@ MonoBehaviour:
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
-  m_colorMode: 3
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0.8078432, g: 0.7294118, b: 0.1764706, a: 1}
-    topRight: {r: 0.69803923, g: 0.4156863, b: 0.24705884, a: 1}
-    bottomLeft: {r: 0.9058824, g: 0.7725491, b: 0.22352943, a: 1}
-    bottomRight: {r: 0.8078432, g: 0.50980395, b: 0.3019608, a: 1}
+    topLeft: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+    topRight: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+    bottomLeft: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+    bottomRight: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 2
   m_textAlignment: 514
-  m_characterSpacing: -9
+  m_characterSpacing: -0.7
   m_wordSpacing: 34
   m_lineSpacing: -45
   m_lineSpacingMax: 0
@@ -928,12 +928,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1678050493}
-    characterCount: 27
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 5
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
