@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -233,12 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 2.asyncLoading
-  loadingProgressEvent: {fileID: 11400000, guid: deda303c00624cf4a9eb5704316ab78b,
-    type: 2}
   async: 0
   loadingTrigger: 1
   loadingEvent: {fileID: 0}
-  delayToUpdateProgress: 0.2
 --- !u!4 &1104962241
 Transform:
   m_ObjectHideFlags: 0

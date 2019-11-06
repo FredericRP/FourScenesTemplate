@@ -91,4 +91,4 @@ MonoBehaviour:
   sceneLoader: {fileID: 5554417621520417078}
   loadingProgressEvent: {fileID: 11400000, guid: deda303c00624cf4a9eb5704316ab78b,
     type: 2}
-  delayToUpdateProgress: 0.2
+  delayToUpdateProgress: 0.05

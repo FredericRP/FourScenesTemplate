@@ -1,3 +1,4 @@
-[submodule "Assets/Standard-Assets"]
-	path = Assets/Standard-Assets
+[submodule "Assets/FredericRP/Standard-Assets"]
+	path = Assets/FredericRP/Standard-Assets
 	url = git@github.com:FredericRP/Standard-Assets.git
+	branch = master

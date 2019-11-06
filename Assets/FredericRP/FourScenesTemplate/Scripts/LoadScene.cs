@@ -1,4 +1,5 @@
 ﻿using FredericRP.EventManagement;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,10 +30,18 @@ namespace FredericRP.ProjectTemplate
     public AsyncOperation AsyncOperation { get => asyncOperation; }
 
     // Start is called before the first frame update
-    private void Start()
+    private IEnumerator Start()
     {
       if (loadingTrigger == LoadingTrigger.onStart)
+      {
+#if UNITY_EDITOR && SLOW_MODE
+        yield return new WaitForSeconds(1.5f);
+      Debug.Log("Slow mode. Waiting for 1.5sec before launching transition");
+#else
+      yield return null;
+#endif
         StartLoading();
+      }
     }
 
     private void OnEnable()

@@ -1,7 +1,7 @@
 # Four Scenes Template
 
 A unity project template that can served every purpose you can think of.
-This template was inspired by unity games projects that were published on PC, Android, iOS and Switch platforms.
+This template was inspired by unity games projects we developed that were published on PC, Android, iOS and Switch platforms.
 
 ![Global description](Publishing/large.png)
 
@@ -10,15 +10,19 @@ This template was inspired by unity games projects that were published on PC, An
 ### Installation
 1. You MUST include **FredericRP's Standard Asset** package to this project for it to compile. See "FredericRP Standard Assets" section below
 2. Import the package
-3. Include the 4 scenes included in the correct order (from 1. to 4..) in your build settings
+3. Move the StreamingAssets folder in the Assets root. Do not replace content but if you already have one, merge them (move inner files and folder in the existing StreamingAssets).
+
+![Before](Publishing/streamingAssetsBefore.jpg) ![After](Publishing/streamingAssetsAfter.jpg)
+
+4. Include the 4 scenes included in the correct order (from 1. to 4..) in your build settings
 
 ![Build Settings](Publishing/build-settings.jpg)
 
-4. Change the Scene Name parameter of the "PlayButton" GameObject on the scene "4.menu" to be the first scene of your game.
+5. Change the Scene Name parameter of the "PlayButton" GameObject on the scene "4.menu" to be the first scene of your game.
 
 ![PlayButton customisation](Publishing/playButton.jpg)
 
-5. Include this scene in the build settings OR include the provided "game" sample scene, located under the *FourScenesTemplate/Example/Scenes* folder.
+6. Include this scene in the build settings OR include the provided "game" sample scene, located under the *FourScenesTemplate/Example/Scenes* folder.
 
 ### Editor test
 
