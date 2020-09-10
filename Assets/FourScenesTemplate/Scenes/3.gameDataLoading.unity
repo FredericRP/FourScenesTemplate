@@ -456,6 +456,7 @@ MonoBehaviour:
   progressEvent: {fileID: 11400000, guid: deda303c00624cf4a9eb5704316ab78b, type: 2}
   gaugeRect: {fileID: 1553920540}
   anchorMin: 0.1
+  fillSpeed: 20
 --- !u!222 &766592089
 CanvasRenderer:
   m_ObjectHideFlags: 0

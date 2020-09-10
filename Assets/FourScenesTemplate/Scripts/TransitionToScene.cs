@@ -40,7 +40,7 @@ namespace FredericRP.ProjectTemplate
     /// </summary>
     public void AllowSceneActivation()
     {
-      Debug.Log(Time.time + ":" + gameObject.name + " > Activation !");
+      Debug.Log(Time.time + ":" + gameObject.name + " > Activation of " + this.sceneName + " !");
       transitionInProgress = false;
       AsyncOperation.allowSceneActivation = true;
     }

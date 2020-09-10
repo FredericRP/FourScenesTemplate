@@ -13,6 +13,9 @@ namespace FredericRP.ProjectTemplate
     RectTransform gaugeRect = null;
     [SerializeField]
     float anchorMin = 0.1f;
+    [SerializeField]
+    [Tooltip("Change the speed used to lerp from previous value to new value")]
+    float fillSpeed = 20;
 
     private void OnEnable()
     {
@@ -30,9 +33,9 @@ namespace FredericRP.ProjectTemplate
     {
       Vector2 anchorMax = gaugeRect.anchorMax;
       // At least some pixels width
-      anchorMax.x = Mathf.Max((float)value/100, anchorMin);
+      anchorMax.x = Mathf.Lerp(anchorMax.x, Mathf.Max((float)value/100, anchorMin), fillSpeed * Time.deltaTime);
       gaugeRect.anchorMax = anchorMax;
-      Debug.Log("SceneLoading " + value + "%");
+      //Debug.Log("SceneLoading " + value + "%");
     }
   }
 

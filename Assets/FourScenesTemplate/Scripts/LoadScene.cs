@@ -13,7 +13,7 @@ namespace FredericRP.ProjectTemplate
     protected enum LoadingTrigger { onCall, onStart, onEvent};
 
     [SerializeField]
-    string sceneName = null;
+    protected string sceneName = null;
    
     [SerializeField]
     protected bool async = false;
@@ -63,19 +63,19 @@ namespace FredericRP.ProjectTemplate
       if (loadingTrigger == LoadingTrigger.onEvent && loadingEvent != null)
         EventHandler.TriggerEvent(loadingEvent);
 
-      Debug.Log(Time.time + ":" + gameObject.name + " > Scene Loaded !");
+      Debug.Log(Time.time + ":" + gameObject.name + " > Scene <" + scene.name + "> Loaded !");
     }
 
     public virtual void StartLoading()
     {
       if (async)
       {
-        Debug.Log(Time.time + ":" + gameObject.name + " >Loading ASYNC scene " + sceneName);
+        Debug.Log(Time.time + ":" + gameObject.name + " > Loading ASYNC scene <" + sceneName + ">");
         asyncOperation = SceneManager.LoadSceneAsync(sceneName);
       }
       else
       {
-        Debug.Log(Time.time + ":" + gameObject.name + " >Loading scene " + sceneName);
+        Debug.Log(Time.time + ":" + gameObject.name + " > Loading scene <" + sceneName + ">");
         SceneManager.LoadScene(sceneName);
       }
     }
