@@ -13,12 +13,12 @@ namespace FredericRP.ProjectTemplate
 
     private void OnEnable()
     {
-      EventHandler.AddEventListener<int>(progressEvent, UpdateProgress);
+      progressEvent.Listen<int>(UpdateProgress);
     }
 
     private void OnDisable()
     {
-      EventHandler.RemoveEventListener<int>(progressEvent, UpdateProgress);
+      progressEvent.Delete<int>(UpdateProgress);
     }
 
     // Update is called once per frame

@@ -43,7 +43,7 @@ namespace FredericRP.ProjectTemplate
 
     protected void SendProgressEvent(int progress)
     {
-      EventHandler.TriggerEvent<int>(loadingProgressEvent, progress);
+      loadingProgressEvent.Raise<int>(progress);
     }
   }
 }

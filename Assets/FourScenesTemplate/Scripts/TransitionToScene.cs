@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using FredericRP.ScreenTransitions;
 
 namespace FredericRP.ProjectTemplate
 {
@@ -32,7 +33,7 @@ namespace FredericRP.ProjectTemplate
     {
       transitionInProgress = true;
       // Once scene has been loaded, show the transition
-      Transition.Transition.Show();
+      Transition.GetTransition().Show();
     }
 
     /// <summary>
@@ -49,7 +50,7 @@ namespace FredericRP.ProjectTemplate
     {
       base.OnSceneLoaded(scene, mode);
       // Everything is ready, hide the transition !
-      Transition.Transition.Hide();
+      Transition.GetTransition().Hide();
     }
   }
 }

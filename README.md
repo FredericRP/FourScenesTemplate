@@ -3,13 +3,13 @@
 A unity project template that can served every purpose you can think of.
 This template was inspired by unity games projects we developed that were published on PC, Android, iOS and Switch platforms.
 
-![Global description](Publishing/large.png)
+![Global description](Publishing/large.jpg)
 
 ## How to use it
 
 ### Installation
 1. You MUST include **FredericRP's Standard Asset** package to this project for it to compile. See "FredericRP Standard Assets" section below
-2. Import the package
+2. Import this package from the [Packages section](https://github.com/FredericRP/FourScenesTemplate/packages) of the github page.
 3. Move the StreamingAssets folder in the Assets root. Do not replace content but if you already have one, merge them (move inner files and folder in the existing StreamingAssets).
 
 ![Before](Publishing/streamingAssetsBefore.jpg) ![After](Publishing/streamingAssetsAfter.jpg)
@@ -45,17 +45,14 @@ These scenes will allow you to make the player wait for your content to be loade
 
 ---
 
-**Q**: Do I have to import all the **FredericRP Standard Assets** package ?
-
-**A**: No, you can import only the following ones: AssetBundleTool, BucketGenerator, EventManagement, ObjectPool, Singleton, Tips, Transition. All the others assets could be useful, so feel free to import them !
-
 ## FredericRP Standard Assets
 
 This project uses 6 of the Standard Assets freely available on [FredericRP GitHub page](https://github.fredericrp.com), so you must include it for the package to compile.
 
 You can choose to :
-- use the unity package from the Asset Store also available here : [FredericRP Standard Assets on Unity Asset Store](https://assetstore.unity.com/packages/slug/156803)
-- OR import the package available in the release section of the project (requires 1.1.0 version at least)
-- OR add the assets as a git sub module with the following command
-
+- add the assets as a git sub module with the following command (the prefered method as you will always get the latest news and fixes that way)
 > git submodule add git@github.com:FredericRP/Standard-Assets.git "Assets/Standard-Assets"
+
+- OR use the unity package from the Asset Store also available here : [FredericRP Standard Assets on Unity Asset Store](https://assetstore.unity.com/packages/slug/156803)
+- OR import the package available in the release section of the project (requires 1.3.0 version at least)
+

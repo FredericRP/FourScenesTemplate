@@ -48,20 +48,20 @@ namespace FredericRP.ProjectTemplate
     {
       SceneManager.sceneLoaded += OnSceneLoaded;
       if (loadingTrigger == LoadingTrigger.onEvent)
-        EventHandler.AddEventListener(loadingEvent, StartLoading);
+        loadingEvent.Listen(StartLoading);
     }
 
     void OnDisable()
     {
       SceneManager.sceneLoaded -= OnSceneLoaded;
       if (loadingTrigger == LoadingTrigger.onEvent)
-        EventHandler.RemoveEventListener(loadingEvent, StartLoading);
+        loadingEvent.Delete(StartLoading);
     }
 
     protected virtual void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
       if (loadingTrigger == LoadingTrigger.onEvent && loadingEvent != null)
-        EventHandler.TriggerEvent(loadingEvent);
+        loadingEvent.Raise();
 
       Debug.Log(Time.time + ":" + gameObject.name + " > Scene <" + scene.name + "> Loaded !");
     }
