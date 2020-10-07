@@ -1,17 +1,20 @@
 # Four Scenes Template
 
-A unity project template that can served every purpose you can think of.
-This template was inspired by unity games projects we developed that were published on PC, Android, iOS and Switch platforms.
+A unity project template that can serve every purpose you can think of.
+This template was inspired by unity games projects we developed that were published on PC, Android, iOS, and Switch platforms.
 
 ![Global description](Publishing/large.jpg)
 
 ## Why use it
 
-I've made a [Medium post](https://medium.com/p/ffe38a7043f) on why I've created this package in my former video games studio.
+I've made a [Medium post](https://medium.com/@FredericRP/four-scenes-template-ffe38a7043f5) on why I've created this package in my former video games studio.
 
 ## How to use it
 
 ### Installation
+
+Follow those small 6 steps to test this asset inside Unity. It does not override any project settings so you can import in a brand new project or an existing one.
+
 1. You MUST include **FredericRP's Standard Asset** package to this project for it to compile. See "FredericRP Standard Assets" section below
 2. Import this package from the [Releases section](https://github.com/FredericRP/FourScenesTemplate/releases) of the github page.
 3. Move the StreamingAssets folder in the Assets root. Do not replace content but if you already have one, merge them (move inner files and folder in the existing StreamingAssets).
