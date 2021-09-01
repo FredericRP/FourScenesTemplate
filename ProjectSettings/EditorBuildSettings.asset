@@ -20,4 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FourScenesTemplate/Example/Scenes/game.unity
     guid: 7490cbb7fd83e4e4caf06af3fc3fe4b7
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 403de2df94e549e43bb3177d20c4dcf4,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 19acf83e888b38a47899c89ecf08d545,
+      type: 2}

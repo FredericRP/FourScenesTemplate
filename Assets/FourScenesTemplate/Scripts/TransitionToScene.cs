@@ -24,7 +24,9 @@ namespace FredericRP.ProjectTemplate
       // so we must monitor this value to smoothly launch the transition, then allow the scene to be activated
       if (AsyncOperation != null && AsyncOperation.progress == 0.9f && !transitionInProgress)
       {
+#if UNITY_EDITOR && DEBUG
         Debug.Log(Time.time + ":" + gameObject.name + " > AsynOperation Progress is 0.9, launch transition");
+#endif
         LaunchTransition();
       }
     }
