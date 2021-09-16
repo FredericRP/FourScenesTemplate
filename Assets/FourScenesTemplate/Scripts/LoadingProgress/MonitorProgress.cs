@@ -1,22 +1,22 @@
 ﻿using FredericRP.EventManagement;
 using UnityEngine;
 
-
 namespace FredericRP.ProjectTemplate
 {
   public class MonitorProgress : MonoBehaviour
   {
+    [Header("Links")]
     [SerializeField]
     LoadScene sceneLoader = null;
     [SerializeField]
-    GameEvent loadingProgressEvent = null;
+    FloatGameEvent loadingProgressEvent = null;
+    [Header("Update delay")]
     [SerializeField]
     float delayToUpdateProgress = 0.2f;
 
     protected AsyncOperation asyncOperation;
     protected float nextProgressUpdateTime;
-
-    protected int progress;
+    protected float progress;
 
     private void Start()
     {
@@ -35,15 +35,18 @@ namespace FredericRP.ProjectTemplate
         if (asyncOperation != null)
         {
           nextProgressUpdateTime = Time.time + delayToUpdateProgress;
-          progress = Mathf.RoundToInt(asyncOperation.progress * 100);
+          progress = asyncOperation.progress;
+          // Force 100% progress when 90% is reached as Unity does not go higher on async loading
+          if (progress >= 0.9f)
+            progress = 1;
           SendProgressEvent(progress);
         }
       }
     }
 
-    protected void SendProgressEvent(int progress)
+    protected void SendProgressEvent(float progress)
     {
-      loadingProgressEvent.Raise<int>(progress);
+      loadingProgressEvent.Raise(progress);
     }
   }
 }

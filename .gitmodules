@@ -1,4 +1,33 @@
-[submodule "Assets/FredericRP/Standard-Assets"]
-	path = Assets/FredericRP/Standard-Assets
-	url = git@github.com:FredericRP/Standard-Assets.git
-	branch = master
+[submodule "Assets/Standard Assets/EventManagement"]
+	path = Assets/Standard Assets/EventManagement
+	url = git@github.com:FredericRP/EventManagement.git
+[submodule "Assets/Standard Assets/ObjectPool"]
+	path = Assets/Standard Assets/ObjectPool
+	url = git@github.com:FredericRP/ObjectPool.git
+[submodule "Assets/Standard Assets/PopupHandler"]
+	path = Assets/Standard Assets/PopupHandler
+	url = git@github.com:FredericRP/PopupHandler.git
+[submodule "Assets/Standard Assets/GenericSingleton"]
+	path = Assets/Standard Assets/GenericSingleton
+	url = git@github.com:FredericRP/GenericSingleton.git
+[submodule "Assets/Standard Assets/ScreenTransitions"]
+	path = Assets/Standard Assets/ScreenTransitions
+	url = git@github.com:FredericRP/ScreenTransitions.git
+[submodule "Assets/Standard Assets/PlayerCurrency"]
+	path = Assets/Standard Assets/PlayerCurrency
+	url = git@github.com:FredericRP/PlayerCurrency.git
+[submodule "Assets/Standard Assets/PersistentDataSystem"]
+	path = Assets/Standard Assets/PersistentDataSystem
+	url = git@github.com:FredericRP/PersistentDataSystem.git
+[submodule "Assets/Standard Assets/GameQuest"]
+	path = Assets/Standard Assets/GameQuest
+	url = git@github.com:FredericRP/GameQuest.git
+[submodule "Assets/Standard Assets/StringDataList"]
+	path = Assets/Standard Assets/StringDataList
+	url = git@github.com:FredericRP/StringDataList.git
+[submodule "Assets/Standard Assets/Tips"]
+	path = Assets/Standard Assets/Tips
+	url = git@github.com:FredericRP/Tips.git
+[submodule "Assets/Standard Assets/BucketGenerator"]
+	path = Assets/Standard Assets/BucketGenerator
+	url = git@github.com:FredericRP/BucketGenerator.git

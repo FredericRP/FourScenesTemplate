@@ -7,25 +7,29 @@ namespace FredericRP.ProjectTemplate
   public class DisplayProgress : MonoBehaviour
   {
     [SerializeField]
-    IntGameEvent progressEvent = null;
+    FloatGameEvent progressEvent = null;
     [SerializeField]
     TextMeshProUGUI text = null;
+    [SerializeField]
+    float ratio = 1;
+    [SerializeField]
+    float offset = 0;
 
     private void OnEnable()
     {
-      progressEvent.Listen<int>(UpdateProgress);
+      progressEvent.Listen<float>(UpdateProgress);
     }
 
     private void OnDisable()
     {
-      progressEvent.Delete<int>(UpdateProgress);
+      progressEvent.Delete<float>(UpdateProgress);
     }
 
     // Update is called once per frame
-    void UpdateProgress(int value)
+    void UpdateProgress(float progress)
     {
       // P0 format displays wrong char, must investigate
-      text.text = value.ToString("F0") + " %";
+      text.text = Mathf.RoundToInt(100 * (progress * ratio + offset)).ToString("F0") + " %";
     }
   }
 }

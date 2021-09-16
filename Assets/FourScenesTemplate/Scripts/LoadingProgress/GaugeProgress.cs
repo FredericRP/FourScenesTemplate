@@ -7,35 +7,37 @@ namespace FredericRP.ProjectTemplate
 {
   public class GaugeProgress : MonoBehaviour
   {
-    [SerializeField]
-    IntGameEvent progressEvent = null;
+    [Header("Links")]
     [SerializeField]
     RectTransform gaugeRect = null;
     [SerializeField]
+    FloatGameEvent progressEvent = null;
+    [Header("Config")]
+    [SerializeField]
     float anchorMin = 0.1f;
     [SerializeField]
-    [Tooltip("Change the speed used to lerp from previous value to new value")]
-    float fillSpeed = 20;
+    float ratio = 1;
+    [SerializeField]
+    float offset = 0;
+
 
     private void OnEnable()
     {
-      progressEvent.Listen<int>(UpdateProgress);
+      progressEvent?.Listen<float>(UpdateProgress);
     }
 
     private void OnDisable()
     {
-      progressEvent.Delete<int>(UpdateProgress);
+      progressEvent?.Delete<float>(UpdateProgress);
     }
 
-
     // Update is called once per frame
-    void UpdateProgress(int value)
+    void UpdateProgress(float progress)
     {
       Vector2 anchorMax = gaugeRect.anchorMax;
       // At least some pixels width
-      anchorMax.x = Mathf.Lerp(anchorMax.x, Mathf.Max((float)value/100, anchorMin), fillSpeed * Time.deltaTime);
+      anchorMax.x = Mathf.Max(progress * ratio + offset, anchorMin);
       gaugeRect.anchorMax = anchorMax;
-      //Debug.Log("SceneLoading " + value + "%");
     }
   }
 
