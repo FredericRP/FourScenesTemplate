@@ -31,6 +31,9 @@
 [submodule "Assets/Standard Assets/BucketGenerator"]
 	path = Assets/Standard Assets/BucketGenerator
 	url = git@github.com:FredericRP/BucketGenerator.git
+[submodule "Assets/Standard Assets/EasyLoading"]
+	path = Assets/Standard Assets/EasyLoading
+	url = git@github.com:FredericRP/EasyLoading.git
 [submodule "Assets/Standard Assets/SimpleLocalization"]
 	path = Assets/Standard Assets/SimpleLocalization
 	url = git@github.com:FredericRP/SimpleLocalization.git
