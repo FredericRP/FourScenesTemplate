@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/FourScenesTemplate/Scenes/4.menu.unity
     guid: 1d64b1a0222954c4cbbd9cb21c64e912
   - enabled: 1
-    path: Assets/FourScenesTemplate/Example/Scenes/game.unity
+    path: Assets/FourScenesTemplate/Sample/Scenes/game.unity
     guid: 7490cbb7fd83e4e4caf06af3fc3fe4b7
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 77b9297f4cb867042910978dcabdf96a,

@@ -569,70 +569,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2451706824236077445, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2451706824236099648, guid: b27ce9dfbcf8c414d99875c615fb8a78,
         type: 3}
       propertyPath: m_Name
       value: transitionCutOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110091434978851479, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110091434978851479, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110091434978851479, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110091434978851479, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110091434978851479, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538851594745827440, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757644166935809849, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139287869112479378, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: max
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6153159035728895929, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6153159035728895929, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6153159035728895929, guid: b27ce9dfbcf8c414d99875c615fb8a78,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27ce9dfbcf8c414d99875c615fb8a78, type: 3}
@@ -725,7 +665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8ae815918cc2d3549913c6dc9920f878, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -802,7 +742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f867b214206e3247a8f0d476a3d70ed, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -829,14 +769,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1487919687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966bdac3a49f68543a05b7cbd095317f, type: 3}
+  m_Script: {fileID: 11500000, guid: 35d474f41b52e414d815f0ed79990d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gaugeRect: {fileID: 1358848932}
-  progressEvent: {fileID: 11400000, guid: deda303c00624cf4a9eb5704316ab78b, type: 2}
-  anchorMin: 0.1
+  progressEvent: {fileID: 11400000, guid: 7527186898a727f4bbaa115930edcd25, type: 2}
   ratio: 0.5
   offset: 0
+  gaugeId: 
+  gaugeRect: {fileID: 1358848932}
+  anchorMin: 0.1
+  hideBelowMin: 0
 --- !u!1 &1489735758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,13 +998,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678050491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88472ba557146af42b64b7ef5af8f4f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9671f0983501c8c4ea13916695d0b87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressEvent: {fileID: 11400000, guid: deda303c00624cf4a9eb5704316ab78b, type: 2}
-  text: {fileID: 1678050493}
+  progressEvent: {fileID: 11400000, guid: 7527186898a727f4bbaa115930edcd25, type: 2}
   ratio: 0.5
   offset: 0
+  gaugeId: 
+  text: {fileID: 1678050493}
 --- !u!1 &1797465921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneLoader: {fileID: 5554417621206667265}
-  loadingProgressEvent: {fileID: 11400000, guid: deda303c00624cf4a9eb5704316ab78b,
+  loadingProgressEvent: {fileID: 11400000, guid: 7527186898a727f4bbaa115930edcd25,
     type: 2}
   delayToUpdateProgress: 0.05
 --- !u!114 &5554417621206667265
