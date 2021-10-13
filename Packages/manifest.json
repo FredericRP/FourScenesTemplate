@@ -47,7 +47,6 @@
       "url": "https://package.openupm.com",
       "scopes": [
         "com.fredericrp",
-        "com.littlebigfun.addressable-importer",
         "com.openupm"
       ]
     }

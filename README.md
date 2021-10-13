@@ -13,23 +13,21 @@ I've made a [Medium post](https://medium.com/@FredericRP/four-scenes-template-ff
 
 ### Installation
 
-Follow those small 6 steps to test this asset inside Unity. It does not override any project settings so you can import in a brand new project or an existing one.
+Follow those small 5 steps to test this asset inside Unity. It does not override any project settings so you can import in a brand new project or an existing one.
 
 1. You MUST include **FredericRP's Standard Asset** package to this project for it to compile. See "FredericRP Standard Assets" section below
 2. Import this package from the [Releases section](https://github.com/FredericRP/FourScenesTemplate/releases) of the github page.
-3. Move the StreamingAssets folder in the Assets root. Do not replace content but if you already have one, merge them (move inner files and folder in the existing StreamingAssets).
-
-![Before](Publishing/streamingAssetsBefore.jpg) ![After](Publishing/streamingAssetsAfter.jpg)
-
-4. Include the 4 scenes included in the correct order (from 1. to 4..) in your build settings
+3. It's already done if you use the full project, but if not, do not forget to include the 4 scenes included in the correct order (from 1. to 4..) in your build settings
 
 ![Build Settings](Publishing/build-settings.jpg)
 
-5. Change the Scene Name parameter of the "PlayButton" GameObject on the scene "4.menu" to be the first scene of your game.
+4. If required, change the Scene Name parameter of the "PlayButton" GameObject on the scene "4.menu" to be the first scene of your game.
 
 ![PlayButton customisation](Publishing/playButton.jpg)
 
-6. Include this scene in the build settings OR include the provided "game" sample scene, located under the *FourScenesTemplate/Example/Scenes* folder.
+5. Of course, include your game scene in the build settings OR include the provided "game" sample scene, located under the *FourScenesTemplate/Example/Scenes* folder.
+
+*Remark*: if you update from a previous version, beware that the tips are no more loaded from the streaming assets folder, but from a Resources folder.
 
 ### Editor test
 
@@ -41,7 +39,8 @@ Once the installation has been done, follow these steps to check if everything i
 You should see the 4 scenes be loaded one after another, with a progress bar on 2nd and 3rd scene, and access the menu scene.
 Clicking on the Play button launches your game.
 
-> *This is very fast if you're on a fast PC with the default content, don't be surprised if you don't see each scene be loaded !*
+> *This is very fast if you're on a fast PC with the default content, don't be surprised if you don't see each scene be loaded, even if I've added a 1.5sec wait before loading new scenes for the editor!*
+
 These scenes will allow you to make the player wait for your content to be loaded.
 
 ## F.A.Q.
@@ -50,16 +49,42 @@ These scenes will allow you to make the player wait for your content to be loade
 
 **A**: please ensure you have followed all Installation steps. This package provides a template without a game: you have to create your own game, but for your convenience, we have included an almost empty "game" scene, located under the *FourScenesTemplate/Example/Scenes* folder.
 
+**Q**: I have an error saying the **namespace FredericRP.*something* is not known**.
+
+**A**: please ensure you have imported all required *Standard Assets* in their latest version. If you update from a previous version of this project, remove the *Standard Assets* submodule or package and include the separated assets as only they are updated now (follow the steps just below).
+
 ---
 
 ## FredericRP Standard Assets
 
-This project uses 6 of the Standard Assets freely available on [FredericRP GitHub page](https://github.fredericrp.com), so you must include it for the package to compile.
+This project uses a lot of Assets that I share freely on [FredericRP GitHub page](https://github.fredericrp.com). You must include them for it to work.
 
-You can choose to :
-- add the assets as a git sub module with the following command (the prefered method as you will always get the latest news and fixes that way)
-> git submodule add git@github.com:FredericRP/Standard-Assets.git "Assets/Standard-Assets"
+### Import as submodules
 
-- OR use the unity package from the Asset Store also available here : [FredericRP Standard Assets on Unity Asset Store](https://assetstore.unity.com/packages/slug/156803)
-- OR import the package available in the release section of the project (requires 1.3.0 version at least)
+You can choose to add the assets as a git sub module with the following command (the prefered method as you will always get the latest news and fixes that way)
+> git submodule add git@github.com:FredericRP/*asset name*.git "Assets/Standard Assets/*asset name*"
 
+For test purpose, I include all my shared assets in the project, even if it does not uses all of them, here is the full list:
+- BucketGenerator
+- EasyLoading
+- EventManagement
+- GameQuest
+- GenericSingleton
+- ObjectPool
+- PersistendDataSystem
+- PlayerCurrency
+- PopupHandler
+- ScreenTransitions
+- SimpleLocalization
+- StringDataList
+- Tips
+
+### Import as packages
+
+If not already, all assets will be available through openUPM.com so you can add it as a scoped registry and add them directly from the package manager.
+
+1. Add the scoped registry for the com.fredericrp scope
+![Scoped Registry](Documentation~/images/scoped-registry.jpg)
+
+2. Add packages from the package manager
+![Package Manager](Documentation~/images/package-manager.jpg)
