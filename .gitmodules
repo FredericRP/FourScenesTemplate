@@ -37,3 +37,6 @@
 [submodule "Assets/Standard Assets/SimpleLocalization"]
 	path = Assets/Standard Assets/SimpleLocalization
 	url = git@github.com:FredericRP/SimpleLocalization.git
+[submodule "Assets/Standard Assets/UnityPackageTool"]
+	path = Assets/Standard Assets/UnityPackageTool
+	url = git@github.com:FredericRP/UnityPackageTool.git
