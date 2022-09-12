@@ -606,7 +606,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: SLOW_MODE
+    1: SLOW_MODE;FRP_DATA_LIST
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
