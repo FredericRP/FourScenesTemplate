@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Changed
+- use data list with object pool and update of required packages
+
+### Fixed
+- ability to have multiple quests for same target id
+
 ## [1.0.0] - 2020-09-10
 
 ### Added
