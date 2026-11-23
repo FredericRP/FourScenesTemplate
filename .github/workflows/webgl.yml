@@ -37,6 +37,12 @@ jobs:
       - name: CI WebGL settings
         run: |
           mkdir -p Assets/Editor && cp .github/webgl/CIWebGLSettings.cs Assets/Editor/
+          # The template's own "game" scene is almost empty: the web build plays the GameQuest flower
+          # sample instead (click the flowers to score points and complete quests).
+          GAME="Assets/Standard Assets/GameQuest/Runtime/Sample/Scenes/GameQuestExample.unity"
+          sed -i 's/^  sceneName: game$/  sceneName: GameQuestExample/' Assets/FourScenesTemplate/Scenes/4.menu.unity
+          { ls Assets/FourScenesTemplate/Scenes/[1-4].*.unity; echo "$GAME"; } > Assets/Editor/webgl-scenes.txt
+          cat Assets/Editor/webgl-scenes.txt
           # Some pinned Standard Assets submodules have Editor asmdefs without platform filter, which breaks
           # player builds (fixed upstream since): restrict every asmdef under an Editor folder to the editor.
           find Assets -path '*/Editor/*.asmdef' -print0 | xargs -0 -r node -e '
