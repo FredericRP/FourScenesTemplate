@@ -68,8 +68,8 @@ const shot = async (name, wait) => {
   await page.waitForTimeout(wait);
   await canvas.screenshot({ path: join(out, `${name}.png`) });
   console.log('screenshot', name);
-  // Temporary: print a small JPEG in the log, as artifacts cannot be downloaded from the review session.
-  if (process.env.CAPTURE_LOG) console.log('jpeg', name, (await canvas.screenshot({ type: 'jpeg', quality: 40 })).toString('base64'));
+  // Temporary: print the PNG in the log, as artifacts cannot be downloaded from the review session.
+  if (process.env.CAPTURE_LOG) console.log('png', name, (await readFile(join(out, `${name}.png`))).toString('base64'));
 };
 
 await shot('01-loading', 12000);
