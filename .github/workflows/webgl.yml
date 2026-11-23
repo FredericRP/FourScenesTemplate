@@ -40,6 +40,7 @@ jobs:
           # The template's own "game" scene is almost empty: the web build plays the GameQuest flower
           # sample instead (click the flowers to score points and complete quests).
           GAME="Assets/Standard Assets/GameQuest/Runtime/Sample/Scenes/GameQuestExample.unity"
+          cp .github/webgl/CIHideTransition.cs Assets/
           sed -i 's/^  sceneName: game$/  sceneName: GameQuestExample/' Assets/FourScenesTemplate/Scenes/4.menu.unity
           { ls Assets/FourScenesTemplate/Scenes/[1-4].*.unity; echo "$GAME"; } > Assets/Editor/webgl-scenes.txt
           cat Assets/Editor/webgl-scenes.txt
