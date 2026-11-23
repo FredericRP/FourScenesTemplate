@@ -30,8 +30,8 @@ const initScript = () => {
     return getContext.call(this, type, attributes);
   };
   const probe = document.createElement('canvas');
-  probe.width = 48;
-  probe.height = 30;
+  probe.width = 96;
+  probe.height = 60;
   const grab = () => {
     const ctx = probe.getContext('2d', { willReadFrequently: true });
     ctx.drawImage(document.querySelector('canvas'), 0, 0, probe.width, probe.height);
@@ -50,7 +50,8 @@ const initScript = () => {
           if (d > best) { best = d; bx = x; by = y; }
         }
       }
-      resolve(best > 40 ? { x: (bx + 0.5) / probe.width, y: (by + 0.5) / probe.height, d: best } : null);
+      window.lastMotion = best;
+      resolve(best > 24 ? { x: (bx + 0.5) / probe.width, y: (by + 0.5) / probe.height, d: best } : null);
     }, 120);
   });
 };
@@ -67,6 +68,8 @@ const shot = async (name, wait) => {
   await page.waitForTimeout(wait);
   await canvas.screenshot({ path: join(out, `${name}.png`) });
   console.log('screenshot', name);
+  // Temporary: print a small JPEG in the log, as artifacts cannot be downloaded from the review session.
+  if (process.env.CAPTURE_LOG) console.log('jpeg', name, (await canvas.screenshot({ type: 'jpeg', quality: 40 })).toString('base64'));
 };
 
 await shot('01-loading', 12000);
@@ -90,7 +93,7 @@ for (let i = 4; i <= 6; i++) {
   }
   await shot(`${String(i).padStart(2, '0')}-flowers`, 0);
 }
-console.log('clicks on moving targets', hits);
+console.log('clicks on moving targets', hits, 'last motion', await page.evaluate(() => window.lastMotion));
 
 await browser.close();
 server.close();
