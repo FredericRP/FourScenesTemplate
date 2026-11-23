@@ -68,8 +68,6 @@ jobs:
           allowDirtyBuild: true
 
       - name: Screenshots
-        env:
-          CAPTURE_LOG: 1
         run: |
           sudo chown -R "$USER" build
           npm install --no-save --no-package-lock playwright@1.48.2
