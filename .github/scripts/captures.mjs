@@ -58,7 +58,7 @@ const initScript = () => {
 
 await mkdir(out, { recursive: true });
 const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
-const page = await browser.newPage({ viewport: { width: 960, height: 600 } });
+const page = await browser.newPage({ viewport: { width: 1024, height: 800 } });
 page.on('console', (m) => console.log('[game]', m.text()));
 await page.addInitScript(initScript);
 await page.goto('http://localhost:8080/');
@@ -72,6 +72,9 @@ const shot = async (name, wait) => {
 
 await shot('01-loading', 12000);
 await shot('02-menu', 20000);
+// Whole page around the game (header with the project title, footer links).
+await page.screenshot({ path: join(out, '00-page.png'), fullPage: true });
+if (process.env.CAPTURE_LOG) console.log('png', '00-page', (await readFile(join(out, '00-page.png'))).toString('base64'));
 // The Play button is anchored at 50 % width, 40 % height from the bottom of the menu.
 const box = await canvas.boundingBox();
 await canvas.click({ position: { x: box.width * 0.5, y: box.height * 0.6 } });
