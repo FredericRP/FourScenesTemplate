@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{{ PRODUCT_NAME }}} · Frédéric RP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Same tokens as fredericrp.com, dark theme */
+    :root { --nuit: #0E0E10; --ardoise: #1A1A1F; --corail: #FC6A61; --brume: #A1A1AA; --papier: #F7F5F2; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--nuit); color: var(--papier); font-family: "Atkinson Hyperlegible Next", system-ui, sans-serif; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 992px; margin: 0 auto; padding: 16px; }
+    .brand { font-family: "Sora", sans-serif; font-weight: 700; font-size: 20px; color: var(--papier); text-decoration: none; white-space: nowrap; }
+    .brand span { color: var(--corail); }
+    h1 { margin: 0; font-family: "Sora", sans-serif; font-weight: 600; font-size: 18px; text-align: right; }
+    h1 a { color: var(--papier); text-decoration: none; border-bottom: 2px solid var(--corail); }
+    h1 a:hover { color: var(--corail); }
+    main { max-width: 992px; margin: 0 auto; padding: 0 16px 16px; }
+    #unity-container { position: relative; width: 100%; max-width: {{{ WIDTH }}}px; margin: 0 auto; }
+    #unity-canvas { display: block; width: 100%; aspect-ratio: {{{ WIDTH }}} / {{{ HEIGHT }}}; background: var(--ardoise); border-radius: 12px; }
+    #unity-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--brume); }
+    #unity-progress { width: 200px; height: 6px; background: var(--ardoise); border: 1px solid var(--brume); border-radius: 3px; overflow: hidden; }
+    #unity-progress div { width: 0; height: 100%; background: var(--corail); }
+    footer { display: flex; justify-content: space-between; align-items: center; max-width: {{{ WIDTH }}}px; margin: 12px auto 0; color: var(--brume); font-size: 14px; }
+    footer a, footer button { color: var(--brume); background: none; border: 0; font: inherit; cursor: pointer; padding: 0; text-decoration: underline; }
+    footer a:hover, footer button:hover { color: var(--corail); }
+    #unity-warning { color: var(--corail); text-align: center; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="https://fredericrp.com/">F<span>RP</span></a>
+    <h1><a href="%ARTICLE_URL%">%ARTICLE_TITLE%</a></h1>
+  </header>
+  <main>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width="{{{ WIDTH }}}" height="{{{ HEIGHT }}}"></canvas>
+      <div id="unity-loading"><div id="unity-progress"><div></div></div><span>Chargement…</span></div>
+    </div>
+    <div id="unity-warning"></div>
+    <footer>
+      <a href="https://github.com/FredericRP/%REPO%">Code source sur GitHub</a>
+      <button id="unity-fullscreen" type="button">Plein écran</button>
+    </footer>
+  </main>
+  <script>
+    var canvas = document.querySelector("#unity-canvas");
+    var loading = document.querySelector("#unity-loading");
+    var progressBar = document.querySelector("#unity-progress div");
+    var warning = document.querySelector("#unity-warning");
+    var buildUrl = "Build";
+    var config = {
+      dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+      frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+      codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+#if MEMORY_FILENAME
+      memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+      symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+#endif
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "{{{ COMPANY_NAME }}}",
+      productName: "{{{ PRODUCT_NAME }}}",
+      productVersion: "{{{ PRODUCT_VERSION }}}",
+      showBanner: function (message, type) { if (type === "error") warning.textContent = message; console.log(message); },
+    };
+    var script = document.createElement("script");
+    script.src = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    script.onload = function () {
+      createUnityInstance(canvas, config, function (progress) {
+        progressBar.style.width = 100 * progress + "%";
+      }).then(function (unityInstance) {
+        loading.style.display = "none";
+        document.querySelector("#unity-fullscreen").onclick = function () { unityInstance.SetFullscreen(1); };
+      }).catch(function (message) {
+        warning.textContent = message;
+        console.error(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

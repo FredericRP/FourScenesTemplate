@@ -16,6 +16,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  # Project page on fredericrp.com, linked from the title above the game.
+  ARTICLE_TITLE: Un modèle de projet Unity en quatre scènes
+  ARTICLE_URL: https://fredericrp.com/projets/four-scenes-template/
   # Must match ProjectSettings/ProjectVersion.txt (GameCI image unityci/editor:ubuntu-<version>-webgl-3).
   UNITY_VERSION: 2020.3.20f1
 
@@ -41,6 +44,10 @@ jobs:
           # sample instead (click the flowers to score points and complete quests).
           GAME="Assets/Standard Assets/GameQuest/Runtime/Sample/Scenes/GameQuestExample.unity"
           cp .github/webgl/CIHideTransition.cs Assets/
+          # Page around the game, with the look of fredericrp.com and a link to the project page.
+          mkdir -p Assets/WebGLTemplates/FRP
+          sed -e "s|%ARTICLE_TITLE%|$ARTICLE_TITLE|" -e "s|%ARTICLE_URL%|$ARTICLE_URL|" -e "s|%REPO%|${GITHUB_REPOSITORY#*/}|" \
+            .github/webgl/template/index.html > Assets/WebGLTemplates/FRP/index.html
           sed -i 's/^  sceneName: game$/  sceneName: GameQuestExample/' Assets/FourScenesTemplate/Scenes/4.menu.unity
           { ls Assets/FourScenesTemplate/Scenes/[1-4].*.unity; echo "$GAME"; } > Assets/Editor/webgl-scenes.txt
           cat Assets/Editor/webgl-scenes.txt

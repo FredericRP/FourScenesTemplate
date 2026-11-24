@@ -17,6 +17,9 @@ static class CIWebGLSettings
     PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Gzip;
     PlayerSettings.WebGL.decompressionFallback = true;
 #endif
+    // Page template matching fredericrp.com, copied into Assets/WebGLTemplates during the CI build.
+    if (Directory.Exists("Assets/WebGLTemplates/FRP"))
+      PlayerSettings.WebGL.template = "PROJECT:FRP";
     if (File.Exists(ScenesFile))
       EditorBuildSettings.scenes = File.ReadAllLines(ScenesFile)
         .Where(line => line.Trim().Length > 0)
